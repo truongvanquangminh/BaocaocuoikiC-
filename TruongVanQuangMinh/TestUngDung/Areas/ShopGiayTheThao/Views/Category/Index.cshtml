@@ -1,0 +1,75 @@
+﻿@using PagedList.Mvc
+@model PagedList.IPagedList<ModelEF.Model.Category>
+<link href="~/Content/PagedList.css" rel="stylesheet" type="text/css" />
+@{
+    ViewBag.Title = "Quản lý danh mục";
+    Layout = "~/Areas/ShopGiayTheThao/Views/Shared/_Layout.cshtml";
+}
+
+@section header {
+    <i class="fa fa-file-text-o"></i>&nbsp;Danh mục sản phẩm
+}
+
+@using (Html.BeginForm("Index", "Category", FormMethod.Post))
+{
+    <div class="card card-primary card-outline">
+        <div class="card-header">
+            <p>
+                @Html.ActionLink("Tạo mới", "Create", "Category", new { @class = "btn btn-danger" })
+            </p>
+
+            <div class="input-group">
+                <input id="search-focus" type="search" value="@ViewBag.SearchString" name="searchString" placeholder="Tìm kiếm" class="form-control" />
+                <div class="input-group-append">
+                    <div class="btn btn-primary">
+                        <i class="fas fa-search"></i>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+}
+<div class="row">
+    <div class="col-md-12">
+        <div class="card">
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th style="width: 10px">STT</th>
+                            <th>Cấu hình</th>
+                            <th>Tên danh mục</th>
+                            <th>Mô tả</th>
+                            <th>Mã danh mục</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @{ var i = 1;}
+                        @foreach (var item in Model)
+                        {
+                            <tr id="row_@item.ID">
+                                <td>@i</td>
+                                <td>
+                                    &nbsp;&nbsp;&nbsp;&nbsp;
+                                    @Ajax.ActionLink(" ", "Delete", new { @id = item.ID }, new AjaxOptions
+                               {
+                                   Confirm = "Bạn có muốn xóa bản ghi này",
+                                   OnComplete = "$('#row_" + @item.Name + "').remove()",
+                                   HttpMethod = "Delete"
+                               }, new { @class = "fa fa-trash" })
+                                </td>
+                                <td>@item.Name</td>
+                                <td>
+                                    @item.Description
+                                </td>
+                                <td>@item.ID</td>
+                            </tr>
+                            i++;
+                        }
+                    </tbody>
+                </table>
+                 @Html.PagedListPager(Model, page => Url.Action("Index", new { page, @searchString = @ViewBag.SearchString }))
+            </div>
+        </div>
+    </div>
+</div>

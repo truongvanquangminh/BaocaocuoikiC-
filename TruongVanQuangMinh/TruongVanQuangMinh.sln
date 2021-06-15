@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31205.134
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ModelEF", "ModelEF\ModelEF.csproj", "{6857BAA5-1470-46D5-A1F6-3ACE7874AE6E}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TestUngDung", "TestUngDung\TestUngDung.csproj", "{C72A4EF8-BC0F-46E1-A6B0-AEF693D756C4}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{6857BAA5-1470-46D5-A1F6-3ACE7874AE6E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{6857BAA5-1470-46D5-A1F6-3ACE7874AE6E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{6857BAA5-1470-46D5-A1F6-3ACE7874AE6E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{6857BAA5-1470-46D5-A1F6-3ACE7874AE6E}.Release|Any CPU.Build.0 = Release|Any CPU
+		{C72A4EF8-BC0F-46E1-A6B0-AEF693D756C4}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{C72A4EF8-BC0F-46E1-A6B0-AEF693D756C4}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{C72A4EF8-BC0F-46E1-A6B0-AEF693D756C4}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{C72A4EF8-BC0F-46E1-A6B0-AEF693D756C4}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {33B5843C-45CB-49E5-9BCB-A8313BCC287F}
+	EndGlobalSection
+EndGlobal
